@@ -1,6 +1,6 @@
-# 🔬 Cancer Risk Classification — Comparing Three ML Algorithms
+# 🔬 Cancer Risk Classification -> Comparing Three ML Algorithms
 
-Classification is the most common task in clinical machine learning — given a set of measurements, predict which category a patient belongs to. This project builds and compares three classification algorithms of increasing complexity on a well-studied medical dataset, exploring the trade-off between model simplicity and predictive power and learning when complexity actually helps.
+Classification is the most common task in clinical machine learning, given a set of measurements, predict which category a patient belongs to. This project builds and compares three classification algorithms of increasing complexity on a well-studied medical dataset, exploring the trade-off between model simplicity and predictive power and learning when complexity actually helps.
 
 ---
 
@@ -19,22 +19,22 @@ Classification is the most common task in clinical machine learning — given a 
 
 ## 🗂️ The Dataset
 
-The Wisconsin Breast Cancer dataset contains measurements computed from digitised images of fine needle aspirate (FNA) biopsies. Each of 30 features describes a different geometric property of the cell nuclei present in the image — mean, worst, and standard error versions of 10 base measurements. The target is whether the tumour was ultimately diagnosed as malignant or benign.
+The Wisconsin Breast Cancer dataset contains measurements computed from digitised images of fine needle aspirate (FNA) biopsies. Each of 30 features describes a different geometric property of the cell nuclei present in the image, mean, worst, and standard error versions of 10 base measurements. The target is whether the tumour was ultimately diagnosed as malignant or benign.
 
-This dataset is notable for being genuinely linearly separable — the two classes can be distinguished with high accuracy by a simple linear boundary — which makes it an ideal benchmark for comparing algorithm complexity.
+This dataset is notable for being genuinely linearly separable, the two classes can be distinguished with high accuracy by a simple linear boundary, which makes it an ideal benchmark for comparing algorithm complexity.
 
 ---
 
 ## 🤖 Models Trained
 
 ### Logistic Regression
-The simplest classifier — learns a linear decision boundary by fitting a weighted sum of features through a sigmoid function. Fast, interpretable, and a strong baseline whenever the data is approximately linearly separable. Coefficients directly indicate each feature's contribution to the prediction.
+The simplest classifier, learns a linear decision boundary by fitting a weighted sum of features through a sigmoid function. Fast, interpretable, and a strong baseline whenever the data is approximately linearly separable. Coefficients directly indicate each feature's contribution to the prediction.
 
 ### Random Forest
-An ensemble of 100 decision trees, each trained on a random sample of data and features. Individual trees overfit — the ensemble corrects this by averaging predictions across trees. Captures non-linear relationships and provides feature importance scores without requiring scaling.
+An ensemble of 100 decision trees, each trained on a random sample of data and features. Individual trees overfit, the ensemble corrects this by averaging predictions across trees. Captures non-linear relationships and provides feature importance scores without requiring scaling.
 
 ### XGBoost
-Sequential boosted trees — each new tree corrects the residual errors of all previous trees. State-of-the-art on tabular data, handles missing values, includes built-in regularisation, and provides its own feature importance metric. More hyperparameters to tune but often the highest-performing model on structured data.
+Sequential boosted trees, each new tree corrects the residual errors of all previous trees. State-of-the-art on tabular data, handles missing values, includes built-in regularisation, and provides its own feature importance metric. More hyperparameters to tune but often the highest-performing model on structured data.
 
 ---
 
@@ -68,7 +68,7 @@ Sequential boosted trees — each new tree corrects the residual errors of all p
 
 ## 🔍 Key Findings
 
-**Logistic Regression wins on AUC (0.996) despite being the simplest model.** This is the most important lesson from this project — complexity does not equal performance. The breast cancer dataset is nearly linearly separable, and logistic regression is perfectly suited to this structure. Adding trees and boosting rounds does not help because the fundamental relationship is already linear.
+**Logistic Regression wins on AUC (0.996) despite being the simplest model.** This is the most important lesson from this project, complexity does not equal performance. The breast cancer dataset is nearly linearly separable, and logistic regression is perfectly suited to this structure. Adding trees and boosting rounds does not help because the fundamental relationship is already linear.
 
 **Top 5 features by Random Forest importance:**
 1. `worst area` (0.1514) — largest cell area in the sample
@@ -77,7 +77,7 @@ Sequential boosted trees — each new tree corrects the residual errors of all p
 4. `worst perimeter` (0.0836)
 5. `mean concave points` (0.0811)
 
-All five are "worst" measurements — the largest values observed in the sample rather than averages. The most extreme cell in the biopsy is more diagnostically informative than the average cell — which is clinically meaningful for malignancy detection.
+All five are "worst" measurements, the largest values observed in the sample rather than averages. The most extreme cell in the biopsy is more diagnostically informative than the average cell, which is clinically meaningful for malignancy detection.
 
 ---
 
@@ -111,18 +111,17 @@ python3 cancer_classification.py
 
 ## 📚 Skills Developed
 
-- Understanding logistic regression, Random Forest, and XGBoost — architectures, assumptions, and trade-offs
+- Understanding logistic regression, Random Forest, and XGBoost -> architectures, assumptions, and trade-offs
 - 5-fold stratified cross-validation and why it produces more reliable estimates than a single train/test split
-- Reading and interpreting confusion matrices — TP, TN, FP, FN and their clinical implications
-- AUC-ROC — what it measures, why it is preferred over accuracy for medical classification, and how to compare models using it
+- Reading and interpreting confusion matrices -> TP, TN, FP, FN and their clinical implications
+- AUC-ROC -> what it measures, why it is preferred over accuracy for medical classification, and how to compare models using it
 - Feature importance from tree-based models vs coefficients from linear models
 - The most common modelling mistake: assuming more complex = better performance
 
 ---
 
 ## 🗺️ Learning Roadmap
-
-**Project 3 of 10** — a structured series building from data exploration through to advanced ML techniques.
+_**Project 3 of 10** _ -> a structured series building from data exploration through to advanced ML techniques.
 
 | # | Project | Focus |
 |---|---------|-------|
