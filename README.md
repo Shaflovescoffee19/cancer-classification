@@ -121,7 +121,7 @@ python3 cancer_classification.py
 ---
 
 ## 🗺️ Learning Roadmap
-_**Project 3 of 10** _ -> a structured series building from data exploration through to advanced ML techniques.
+_**Project 3 of 10**_ -> a structured series building from data exploration through to advanced ML techniques.
 
 | # | Project | Focus |
 |---|---------|-------|
